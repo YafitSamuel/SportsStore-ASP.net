@@ -1,0 +1,63 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Butcherman&family=Exo:wght@900&family=Fredoka+One&family=Irish+Grover&family=Niconne&family=Yuji+Boku&display=swap');
+
+
+body {
+    background: #131313;
+    color: pink;
+}
+
+.container1 {
+    display: flex;
+}
+
+.image{
+    position: relative;
+    margin-top: 20px;
+    width: 50%;
+    height: 300px;
+    justify-content: space-around;
+}
+
+p {
+    width: 60%;
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    text-align: center;
+}
+
+/*--------------------------------------*/
+ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    list-style: none;
+    background-color: pink;
+}
+
+    ul a {
+        text-decoration: none;
+        color: pink;
+        font-size: x-large;
+        padding: 10px;
+    }
+
+.footerList {
+   
+    padding-bottom: 30px;
+    justify-content: space-evenly;
+}
+
+.iconImages {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+    .iconImages img {
+        width: 20px;
+        height: 20px;
+        margin-left: 50px;
+        border: 3px solid pink;
+        border-radius: 50%;
+    }

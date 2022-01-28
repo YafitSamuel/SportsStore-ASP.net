@@ -1,0 +1,45 @@
+﻿body {
+    font-family: 'Poppins', sans-serif;
+    background: #232323;
+    color: yellowgreen;
+}
+
+table {
+   
+    width: 100%;
+    margin-top:20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 3px;
+}
+
+tr {
+    height: 30px;
+    color: yellowgreen;
+}
+
+    tr:hover {
+        border-radius: 20%;
+        border: 1px solid yellowgreen;
+        height: 50px;
+        transition: 0.3s;
+    }
+
+th {
+    background-color: yellowgreen;
+    color: black;
+}
+
+img {
+    width: 60px;
+    height: 30px;
+    border-radius: 20%;
+}
+    img:hover {
+        width: 70px;
+        height: 50px;
+        border-radius: 20%;
+        transition: 0.5s;
+    }

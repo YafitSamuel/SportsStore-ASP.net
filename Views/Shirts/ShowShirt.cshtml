@@ -1,0 +1,29 @@
+﻿<link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet" type="text/css" />
+
+<button type="button" onclick="location.href = '@Url.Action("ShowOnlyLongShirt", "Shirts") '">ShirtsLong</button>
+<button type="button" onclick="location.href='@Url.Action("ShowOnlyShortShirt", "Shirts")'">ShirtShort</button>
+<button type="button" onclick="location.href='@Url.Action("ShowAllPantsInTabel", "Shirts")'">ShirtDrape</button>
+<button type="button" onclick="location.href = '@Url.Action("SortByPrice", "Shirts") '">Sort</button>
+
+
+<div class="containerOfPages">
+
+    @foreach (var item in @ViewBag.Shirt)
+    {
+            <div class="card">
+                <img class="img" src=" @item.Image" />
+                <h5>  @item.Company</h5>
+                <div class="contentBx">
+                    <div class="size">
+                        <h6> @item.Model</h6>
+                        <h6> @item.Price</h6>
+                        <h6> @item.Amount</h6>
+                        <div class="color">
+                            <h5 class="sale"> Sale </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    }
+</div>

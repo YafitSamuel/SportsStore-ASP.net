@@ -1,0 +1,34 @@
+﻿@*<link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">*@
+
+<link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet" type="text/css" />
+<div class="containerOfPages">
+    @foreach (var item in @ViewBag.Football)
+    {
+        if (@item.SportType == "Football")
+        {
+
+            <div class="card">
+                <img class="img" src=" @item.Image" />
+                <h5>  @item.Company</h5>
+                <div class="contentBx">
+                    <div class="size">
+                        <h6> @item.Model</h6>
+                        <h6> @item.Price</h6>
+                        <h6> @item.Amount</h6>
+                        <div class="color">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+        else
+        {
+
+            <span></span>
+
+        }
+    }
+</div>

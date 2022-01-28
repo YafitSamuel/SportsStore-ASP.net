@@ -1,0 +1,29 @@
+﻿@using SportsStore.Models;
+<link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet" type="text/css" />
+
+<div class="containerOfPages">
+
+    @foreach (Clothing item in @ViewBag.Clothings)
+    {
+
+        <div class="card">
+            <img class="img" src=" @item.Image" />
+            <h5>  @item.TypeOfClothing</h5>
+            <div class="contentBx">
+                <div class="size">
+
+                    <h6> @item.Company</h6>
+                    <h6> @item.Model</h6>
+                    <h6> @item.Price</h6>
+
+
+                    <div class="color">
+                        <h5 class="sale"> SALE </h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

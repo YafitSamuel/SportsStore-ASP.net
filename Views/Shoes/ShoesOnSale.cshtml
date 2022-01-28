@@ -1,0 +1,36 @@
+﻿<link href="@Url.Content("~/Content/StyleSheet3.css")" rel="stylesheet" type="text/css" />
+
+<div class="containerOfPages">
+    @foreach (var item in @ViewBag.Sale)
+    {
+        if (@item.isSale == true)
+        {
+
+    <div class="card">
+        <img class="img" src=" @item.image" />
+        <h5>  @item.company</h5>
+        <div class="contentBx">
+            <div class="size">
+                <h6> @item.model</h6>
+                <h6> @item.price</h6>
+                <h6> @item.amount</h6>
+                <div class="color">
+                    <h5 class="sale"> Sale </h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        }
+        else
+        {
+
+            <p></p>
+
+        }
+
+
+
+    }
+</div>

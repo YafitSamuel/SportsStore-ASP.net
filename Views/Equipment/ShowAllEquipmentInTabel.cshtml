@@ -1,0 +1,37 @@
+﻿
+@using SportsStore.Models;
+
+<link href="@Url.Content("~/Content/StyleSheet2.css")" rel="stylesheet" type="text/css" />
+<button type="button" onclick="location.href='@Url.Action("ShoesOnSale", "Shoes")'">Sale</button>
+
+<table style="width:100%">
+
+    <tr>
+        <th>SportType</th>
+        <th>ProductName</th>
+        <th>Company</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Image</th>
+    </tr>
+
+
+ 
+
+    @foreach (var item in @ViewBag.EquipmentTable)
+
+    {
+        <tr>
+            <td>@item.SportType</td>
+            <td>@item.ProductName</td>
+            <td>@item.Company</td>
+            <td> @item.Price</td>
+            <td>@item.Amount</td>
+            <td>  <img src=" @item.Image" width="50px" height="50px" /> </td>
+        </tr>
+
+    }
+
+</table>
+
+

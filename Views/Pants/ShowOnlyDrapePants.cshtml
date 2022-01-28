@@ -1,0 +1,37 @@
+﻿
+
+<link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet" type="text/css" />
+<div class="containerOfPages">
+
+    @foreach (var item in @ViewBag.Clothings)
+    {
+        if (@item.IsDreyfit == true)
+        {
+            
+                <div class="card">
+                    <img class="img" src=" @item.Image" />
+                    <h5>  @item.Company</h5>
+                    <div class="contentBx">
+                        <div class="size">
+                            <h6> @item.Model</h6>
+                            <h6> @item.Price</h6>
+                            <h6> @item.Amount</h6>
+                            <div class="color">
+                                <h5 class="sale"> Sale </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                }
+                else
+                {
+
+                <p>
+                    No short Dreyafit
+                </p>
+
+                }
+                }
+
+            </div>
