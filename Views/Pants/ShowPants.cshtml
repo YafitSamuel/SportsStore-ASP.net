@@ -5,13 +5,13 @@
 
 <button type="button" onclick="location.href = '@Url.Action("ShowOnlyLongPants", "Pants") '">PantsLong</button>
 <button type="button" onclick="location.href='@Url.Action("ShowOnlyShortPants", "Pants")'">PantsShort</button>
-<button type="button" onclick="location.href='@Url.Action("ShowAllPantsInTabel", "Pants")'">PantsDrape</button>
+<button type="button" onclick="location.href='@Url.Action("ShowAllPantsInTabel", "Pants")'">Tabel</button>
 <button type="button" onclick="location.href = '@Url.Action("SortByPrice", "Pants") '">Sort</button>
 
 
 <div class="containerOfPages">
 
-    @foreach (var item in @ViewBag.Clothings)
+    @foreach (var item in @ViewBag.Pants)
     {
 
         {

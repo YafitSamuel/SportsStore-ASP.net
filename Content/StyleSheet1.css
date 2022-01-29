@@ -3,9 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Butcherman&family=Exo:wght@900&family=Fredoka+One&family=Irish+Grover&family=Niconne&family=Yuji+Boku&display=swap');
 
 body {
-    font-family: 'Yuji Boku', serif;
+    font-family: 'Sedgwick Ave', cursive;
     background: #131313;
-    color:pink;
+    color: pink;
+}
+
+button{
+     justify-content: center;
+    margin: 25px;
 }
 
 .containerOfPages {
@@ -31,6 +36,7 @@ body {
     background: pink;
     width: 800px;
 }
+
 
 .containerOfPages .card .img {
     position: absolute;

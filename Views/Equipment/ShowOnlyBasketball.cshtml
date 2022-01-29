@@ -1,10 +1,10 @@
 ﻿@*<link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">*@
-@using SportsStore.Models;
+
 <link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet" type="text/css" />
 <div class="containerOfPages">
-    @foreach (SportsEquipment item in @ViewBag.Basketball)
+    @foreach (var item in @ViewBag.Basketball)
     {
-        if (@item.SportType == "Basketball")
+        if (@item.sportType == "Basketball")
         {
 
             <div class="card">

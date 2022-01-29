@@ -30,20 +30,20 @@
     <Type Name="Team">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nameOfTeam" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
-      <Association Name="Team_SportsEquipment" Member="SportsEquipments" ThisKey="Id" OtherKey="TeamID" Type="SportsEquipment" />
+      <Association Name="Team_sportEquipment" Member="sportEquipments" ThisKey="Id" OtherKey="TeamID" Type="sportEquipment" />
     </Type>
   </Table>
-  <Table Name="dbo.SportsEquipments" Member="SportsEquipments">
-    <Type Name="SportsEquipment">
+  <Table Name="dbo.sportEquipment" Member="sportEquipments">
+    <Type Name="sportEquipment">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SportType" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
-      <Column Name="ProductName" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
-      <Column Name="Company" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sportType" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TeamID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Image" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Association Name="Team_SportsEquipment" Member="Team" ThisKey="TeamID" OtherKey="Id" Type="Team" IsForeignKey="true" />
+      <Column Name="Image" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Association Name="Team_sportEquipment" Member="Team" ThisKey="TeamID" OtherKey="Id" Type="Team" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

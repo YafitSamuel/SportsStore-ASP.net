@@ -42,8 +42,8 @@ namespace SportsStore.Controllers
         }
         public ActionResult ShowOnlyDrapeShirts()
         {
-            List<Clothing> ListShirt = DataContxt.Clothings.ToList();
-            ViewBag.Clothings = ListShirt;
+            List<Clothing> ListShirt = DataContxt.Clothings.Where(item => item.TypeOfClothing == "Shirts").OrderBy(item => item.IsDreyfit == true).ToList();
+            ViewBag.Shirt = ListShirt;
             return View();
         }
         public ActionResult SortByPrice()

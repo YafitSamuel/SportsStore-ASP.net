@@ -17,7 +17,7 @@ namespace SportsStore.Controllers
         public ActionResult ShowPants()
         {
             List<Clothing> ListPantst = DataContxt.Clothings.Where(item=>item.TypeOfClothing=="Pants").ToList();
-            ViewBag.Clothings = ListPantst;
+            ViewBag.Pants = ListPantst;
             return View();
         }
 
@@ -25,32 +25,32 @@ namespace SportsStore.Controllers
         public ActionResult ShowOnlyLongPants()
         {
             List<Clothing> ListPantst = DataContxt.Clothings.Where(item => item.TypeOfClothing == "Pants").ToList();
-            ViewBag.Clothings = ListPantst;
+            ViewBag.Pants = ListPantst;
             return View();
         }
         public ActionResult ShowOnlyShortPants()
         {
             List<Clothing> ListPantst = DataContxt.Clothings.Where(item => item.TypeOfClothing == "Pants").ToList();
-            ViewBag.Clothings = ListPantst;
+            ViewBag.Pants = ListPantst;
             return View();
 
         }
         public ActionResult ShowAllPantsInTabel()
         {
             List<Clothing> ListPantst = DataContxt.Clothings.Where(item => item.TypeOfClothing == "Pants").ToList();
-            ViewBag.Clothings = ListPantst;
+            ViewBag.Pants = ListPantst;
             return View();
         }
         public ActionResult ShowOnlyDrapePants()
         {
-            List<Clothing> ListShirt = DataContxt.Clothings.ToList();
-            ViewBag.Clothings = ListShirt;
+            List<Clothing> ListShirt = DataContxt.Clothings.Where(item => item.IsDreyfit == true).ToList();
+            ViewBag.Pants = ListShirt;
             return View();
         }
         public ActionResult SortByPrice()
         {
             List<Clothing> sort = DataContxt.Clothings.Where(item => item.TypeOfClothing == "Pants").OrderBy(item=>item.Price).ToList();            
-            ViewBag.Clothings = sort;
+            ViewBag.Pants = sort;
             return View();
         }
     }

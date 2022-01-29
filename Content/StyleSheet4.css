@@ -2,6 +2,7 @@
 
 
 body {
+    font-family: 'Sedgwick Ave', cursive;
     background: #131313;
     color: pink;
 }
@@ -19,15 +20,32 @@ body {
 }
 
 p {
-    width: 60%;
+    width: 90%;
     position: absolute;
     bottom: 50px;
-    right: 100px;
+    right: 65px;
     text-align: center;
 }
-
-/*--------------------------------------*/
-ul {
+.navbar-inverse{
+   color:pink;
+}
+    .navbar-inverse .navbar-brand {
+        color: pink;
+    }
+    .navbar-inverse .navbar-toggle {
+        border-color: pink;
+    }
+.icon-bar {
+    color: pink;
+}
+button {
+    margin: 20px;
+    border: 3px solid pink;
+    border-radius: 17px;
+    background-color: #131313;
+}
+        /*--------------------------------------*/
+        ul {
     width: 100%;
     display: flex;
     justify-content: center;

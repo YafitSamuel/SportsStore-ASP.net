@@ -9,15 +9,17 @@ using System.Web.Http;
 
 namespace SportsStore.Controllers.api
 {
-    public class EquipmentController : ApiController
+    public class SportEquipmentController : ApiController
     {
-        ShoesStoreDataContextDataContext DC = new ShoesStoreDataContextDataContext();
-        // GET: api/Equipment
+        ShoesStoreDataContextDataContext DataContxt = new ShoesStoreDataContextDataContext();
+        // GET: api/SportEquipment
+       
+
         public IHttpActionResult Get()
         {
             try
-            {
-                List<SportsEquipment> SportsEquipmentList = DC.SportsEquipments.ToList();
+            { 
+                List<sportEquipment> SportsEquipmentList = DataContxt.sportEquipments.ToList();
                 return Ok(new { SportsEquipmentList });
             }
             catch (Exception ex)
@@ -26,12 +28,12 @@ namespace SportsStore.Controllers.api
             }
         }
 
-        // GET: api/Equipment/5
+        // GET: api/SportEquipment/5
         public IHttpActionResult Get(int id)
         {
             try
             {
-                SportsEquipment OneEquipment = DC.SportsEquipments.First((Item) => Item.Id == id);
+                sportEquipment OneEquipment = DataContxt.sportEquipments.First((Item) => Item.Id == id);
                 return Ok(new { OneEquipment });
             }
             catch (SqlException ex)
@@ -44,13 +46,13 @@ namespace SportsStore.Controllers.api
             }
         }
 
-        // POST: api/Equipment
-        public IHttpActionResult Post([FromBody] SportsEquipment Equipment)
+        // POST: api/SportEquipment
+        public IHttpActionResult Post([FromBody] sportEquipment Equipment)
         {
             try
             {
-                DC.SportsEquipments.InsertOnSubmit(Equipment);
-                DC.SubmitChanges();
+                DataContxt.sportEquipments.InsertOnSubmit(Equipment);
+                DataContxt.SubmitChanges();
                 return Ok("Add");
             }
             catch (SqlException ex)
@@ -64,14 +66,14 @@ namespace SportsStore.Controllers.api
 
         }
 
-        // PUT: api/Equipment/5
-        public IHttpActionResult Put(int id, [FromBody] SportsEquipment equipment)
+        // PUT: api/SportEquipment/5
+        public IHttpActionResult Put(int id, [FromBody] sportEquipment equipment)
         {
             try
             {
-                SportsEquipment EquipmentToUpdate = DC.SportsEquipments.Single(Item => Item.Id == id);
-              EquipmentToUpdate = equipment;
-                DC.SubmitChanges();
+                sportEquipment EquipmentToUpdate = DataContxt.sportEquipments.Single(Item => Item.Id == id);
+                EquipmentToUpdate = equipment;
+                DataContxt.SubmitChanges();
                 return Ok("Eddit");
 
             }
@@ -85,14 +87,14 @@ namespace SportsStore.Controllers.api
             }
         }
 
-        // DELETE: api/Equipment/5
+        // DELETE: api/SportEquipment/5
         public IHttpActionResult Delete(int id)
         {
             try
             {
-                SportsEquipment RemoveEquipment = DC.SportsEquipments.First(Item => Item.Id == id);
-                DC.SportsEquipments.DeleteOnSubmit(RemoveEquipment);
-                DC.SubmitChanges();
+                sportEquipment RemoveEquipment = DataContxt.sportEquipments.First(Item => Item.Id == id);
+                DataContxt.sportEquipments.DeleteOnSubmit(RemoveEquipment);
+                DataContxt.SubmitChanges();
                 return Ok("Removed");
             }
             catch (SqlException sqlEx)

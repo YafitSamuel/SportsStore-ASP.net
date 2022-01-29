@@ -1,7 +1,9 @@
 ﻿
 <link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet" type="text/css" />
-   <div class="CardOfPages">
-@foreach (var item in @ViewBag.Clothings)
+
+   <div class="containerOfPages">
+
+@foreach (var item in @ViewBag.Pants)
 {
     if (@item.IsShort == true)
     {

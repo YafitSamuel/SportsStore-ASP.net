@@ -141,10 +141,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\api\ClothingController.cs" />
-    <Compile Include="Controllers\api\EquipmentController.cs" />
     <Compile Include="Controllers\api\PanttsController.cs" />
     <Compile Include="Controllers\api\ShirtController.cs" />
     <Compile Include="Controllers\api\ShoeController.cs" />
+    <Compile Include="Controllers\api\SportEquipmentController.cs" />
     <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PantsController.cs" />

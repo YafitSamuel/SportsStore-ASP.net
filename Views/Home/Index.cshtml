@@ -1,6 +1,8 @@
 ﻿<link href="@Url.Content("~/Content/StyleSheet4.css")" rel="stylesheet" type="text/css" />
 
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
 <div class="container1">
 
     <img class="image" src="https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/~regional~PNA~others~KOP~Home~SS21~Nitro+Running~Additional+Creative~5653_21_SS_ADDITIONAL-NITRO-CREATIVE_SITE_1536x1536_3.jpg/fmt/jpg/fmt/png" />
@@ -14,11 +16,13 @@
     nibh quis neque. Ut in velit vitae turpis faucibus lobortis eu molestie risus.
     Nullam a sodales nisl. Phasellus egestas lacinia libero. Lorem ipsum dolor sit
     amet, consectetur
-</p>
 
-<div class="container1">
    
-    <button type="button" onclick="location.href='@Url.Action("ShowAllShoes", "Shoes")'">Clothing</button>
-    <button type="button" onclick="location.href='@Url.Action("ShowPants", "Pants")'">PantsDrape</button>
-    <button type="button" onclick="location.href = '@Url.Action("SortByPrice", "Pants") '">Sort</button>
-    </div>
+
+        <button type="button" onclick="location.href='@Url.Action("ShowAllShoes", "Shoes")'">Shoes</button>
+        <button type="button" onclick="location.href='@Url.Action("ShowPants", "Pants")'">Pants</button>
+        <button type="button" onclick="location.href = '@Url.Action("ShowShirt", "Shirts") '">Shirts</button>
+        <button type="button" onclick="location.href = '@Url.Action("ShowAllEquipment", "Equipment") '">Equipment</button>
+  
+
+</p>

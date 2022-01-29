@@ -39,9 +39,9 @@ namespace SportsStore.Models
     partial void InsertTeam(Team instance);
     partial void UpdateTeam(Team instance);
     partial void DeleteTeam(Team instance);
-    partial void InsertSportsEquipment(SportsEquipment instance);
-    partial void UpdateSportsEquipment(SportsEquipment instance);
-    partial void DeleteSportsEquipment(SportsEquipment instance);
+    partial void InsertsportEquipment(sportEquipment instance);
+    partial void UpdatesportEquipment(sportEquipment instance);
+    partial void DeletesportEquipment(sportEquipment instance);
     #endregion
 		
 		public ShoesStoreDataContextDataContext() : 
@@ -98,11 +98,11 @@ namespace SportsStore.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<SportsEquipment> SportsEquipments
+		public System.Data.Linq.Table<sportEquipment> sportEquipments
 		{
 			get
 			{
-				return this.GetTable<SportsEquipment>();
+				return this.GetTable<sportEquipment>();
 			}
 		}
 	}
@@ -625,7 +625,7 @@ namespace SportsStore.Models
 		
 		private string _nameOfTeam;
 		
-		private EntitySet<SportsEquipment> _SportsEquipments;
+		private EntitySet<sportEquipment> _sportEquipments;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -639,7 +639,7 @@ namespace SportsStore.Models
 		
 		public Team()
 		{
-			this._SportsEquipments = new EntitySet<SportsEquipment>(new Action<SportsEquipment>(this.attach_SportsEquipments), new Action<SportsEquipment>(this.detach_SportsEquipments));
+			this._sportEquipments = new EntitySet<sportEquipment>(new Action<sportEquipment>(this.attach_sportEquipments), new Action<sportEquipment>(this.detach_sportEquipments));
 			OnCreated();
 		}
 		
@@ -683,16 +683,16 @@ namespace SportsStore.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_SportsEquipment", Storage="_SportsEquipments", ThisKey="Id", OtherKey="TeamID")]
-		public EntitySet<SportsEquipment> SportsEquipments
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_sportEquipment", Storage="_sportEquipments", ThisKey="Id", OtherKey="TeamID")]
+		public EntitySet<sportEquipment> sportEquipments
 		{
 			get
 			{
-				return this._SportsEquipments;
+				return this._sportEquipments;
 			}
 			set
 			{
-				this._SportsEquipments.Assign(value);
+				this._sportEquipments.Assign(value);
 			}
 		}
 		
@@ -716,36 +716,36 @@ namespace SportsStore.Models
 			}
 		}
 		
-		private void attach_SportsEquipments(SportsEquipment entity)
+		private void attach_sportEquipments(sportEquipment entity)
 		{
 			this.SendPropertyChanging();
 			entity.Team = this;
 		}
 		
-		private void detach_SportsEquipments(SportsEquipment entity)
+		private void detach_sportEquipments(sportEquipment entity)
 		{
 			this.SendPropertyChanging();
 			entity.Team = null;
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SportsEquipments")]
-	public partial class SportsEquipment : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.sportEquipment")]
+	public partial class sportEquipment : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private string _SportType;
+		private string _sportType;
 		
-		private string _ProductName;
+		private string _Product;
 		
 		private string _Company;
 		
-		private System.Nullable<int> _Price;
+		private System.Nullable<int> _price;
 		
-		private int _Amount;
+		private System.Nullable<int> _Amount;
 		
 		private System.Nullable<int> _TeamID;
 		
@@ -759,15 +759,15 @@ namespace SportsStore.Models
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnSportTypeChanging(string value);
-    partial void OnSportTypeChanged();
-    partial void OnProductNameChanging(string value);
-    partial void OnProductNameChanged();
+    partial void OnsportTypeChanging(string value);
+    partial void OnsportTypeChanged();
+    partial void OnProductChanging(string value);
+    partial void OnProductChanged();
     partial void OnCompanyChanging(string value);
     partial void OnCompanyChanged();
-    partial void OnPriceChanging(System.Nullable<int> value);
-    partial void OnPriceChanged();
-    partial void OnAmountChanging(int value);
+    partial void OnpriceChanging(System.Nullable<int> value);
+    partial void OnpriceChanged();
+    partial void OnAmountChanging(System.Nullable<int> value);
     partial void OnAmountChanged();
     partial void OnTeamIDChanging(System.Nullable<int> value);
     partial void OnTeamIDChanged();
@@ -775,7 +775,7 @@ namespace SportsStore.Models
     partial void OnImageChanged();
     #endregion
 		
-		public SportsEquipment()
+		public sportEquipment()
 		{
 			this._Team = default(EntityRef<Team>);
 			OnCreated();
@@ -801,47 +801,47 @@ namespace SportsStore.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SportType", DbType="NChar(40)")]
-		public string SportType
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sportType", DbType="NChar(150)")]
+		public string sportType
 		{
 			get
 			{
-				return this._SportType;
+				return this._sportType;
 			}
 			set
 			{
-				if ((this._SportType != value))
+				if ((this._sportType != value))
 				{
-					this.OnSportTypeChanging(value);
+					this.OnsportTypeChanging(value);
 					this.SendPropertyChanging();
-					this._SportType = value;
-					this.SendPropertyChanged("SportType");
-					this.OnSportTypeChanged();
+					this._sportType = value;
+					this.SendPropertyChanged("sportType");
+					this.OnsportTypeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NChar(40)")]
-		public string ProductName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product", DbType="NChar(150)")]
+		public string Product
 		{
 			get
 			{
-				return this._ProductName;
+				return this._Product;
 			}
 			set
 			{
-				if ((this._ProductName != value))
+				if ((this._Product != value))
 				{
-					this.OnProductNameChanging(value);
+					this.OnProductChanging(value);
 					this.SendPropertyChanging();
-					this._ProductName = value;
-					this.SendPropertyChanged("ProductName");
-					this.OnProductNameChanged();
+					this._Product = value;
+					this.SendPropertyChanged("Product");
+					this.OnProductChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Company", DbType="NChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Company", DbType="NChar(150)")]
 		public string Company
 		{
 			get
@@ -861,28 +861,28 @@ namespace SportsStore.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Int")]
-		public System.Nullable<int> Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Int")]
+		public System.Nullable<int> price
 		{
 			get
 			{
-				return this._Price;
+				return this._price;
 			}
 			set
 			{
-				if ((this._Price != value))
+				if ((this._price != value))
 				{
-					this.OnPriceChanging(value);
+					this.OnpriceChanging(value);
 					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
+					this._price = value;
+					this.SendPropertyChanged("price");
+					this.OnpriceChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Int NOT NULL")]
-		public int Amount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Int")]
+		public System.Nullable<int> Amount
 		{
 			get
 			{
@@ -925,7 +925,7 @@ namespace SportsStore.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NChar(150)")]
 		public string Image
 		{
 			get
@@ -945,7 +945,7 @@ namespace SportsStore.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_SportsEquipment", Storage="_Team", ThisKey="TeamID", OtherKey="Id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_sportEquipment", Storage="_Team", ThisKey="TeamID", OtherKey="Id", IsForeignKey=true)]
 		public Team Team
 		{
 			get
@@ -962,12 +962,12 @@ namespace SportsStore.Models
 					if ((previousValue != null))
 					{
 						this._Team.Entity = null;
-						previousValue.SportsEquipments.Remove(this);
+						previousValue.sportEquipments.Remove(this);
 					}
 					this._Team.Entity = value;
 					if ((value != null))
 					{
-						value.SportsEquipments.Add(this);
+						value.sportEquipments.Add(this);
 						this._TeamID = value.Id;
 					}
 					else

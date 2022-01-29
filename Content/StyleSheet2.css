@@ -1,7 +1,7 @@
 ﻿body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sedgwick Ave', cursive;
     background: #232323;
-    color: yellowgreen;
+    color: #232323;
 }
 
 table {
@@ -17,18 +17,18 @@ th, td {
 
 tr {
     height: 30px;
-    color: yellowgreen;
+   background-color:pink;
 }
 
     tr:hover {
         border-radius: 20%;
-        border: 1px solid yellowgreen;
+        border: 1px solid pink;
         height: 50px;
         transition: 0.3s;
     }
 
 th {
-    background-color: yellowgreen;
+    background-color: pink;
     color: black;
 }
 
